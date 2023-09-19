@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { UsuarioService , Usuario } from 'src/app/servico/usuario.service';
+import { AddusuarioPage } from '../addusuario/addusuario.page';
 
 @Component({
   selector: 'app-usuarios',
@@ -10,7 +12,7 @@ export class UsuariosPage implements OnInit {
 
 usuarios: Usuario[] = [];
 
-  constructor(private service: UsuarioService ) { }
+  constructor(private service: UsuarioService , private modalCrtl: ModalController ) { }
 
   ngOnInit() {
     this.service.getAll().subscribe(
@@ -19,6 +21,25 @@ usuarios: Usuario[] = [];
         this.usuarios = response;
       }
     )
+  }
+  remover(id:any){
+    this.service.remove(id).subscribe(()=>{
+      this.service.getAll().subscribe(
+        response=>{
+          this.usuarios = response;
+        }
+      )
+    }
+    )
+  }
+  novoUsuario(){
+    this.modalCrtl.create({
+      component:AddusuarioPage
+    }).then(
+      modal => modal.present()
+      
+    );
+
   }
 
 }

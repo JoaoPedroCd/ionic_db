@@ -25,7 +25,13 @@ export class UsuarioService {
 
   getAll(){
     return this.http.get<[Usuario]>(this.url);
+    
   }
-
+  remove(id:any){
+    return this.http.delete(this.url+'/'+id);
+  }
+create(usuario: Usuario){
+  return this.http.post(this.url, usuario);
+}
 
 }

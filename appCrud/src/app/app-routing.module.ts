@@ -9,7 +9,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'produtos',
+    redirectTo: 'usuarios',
     pathMatch: 'full'
   },
 
@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'produtos',
     loadChildren: () => import('./pagina/produtos/produtos.module').then( m => m.ProdutosPageModule)
+  },
+  {
+    path: 'addusuario',
+    loadChildren: () => import('./pagina/addusuario/addusuario.module').then( m => m.AddusuarioPageModule)
   },
 
 ];
