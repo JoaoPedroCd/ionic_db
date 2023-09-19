@@ -34,4 +34,9 @@ create(usuario: Usuario){
   return this.http.post(this.url, usuario);
 }
 
+update(usuario: Usuario, id: any){
+  return this.http.put(this.url + '/' + id, usuario);
+}
+
+
 }
