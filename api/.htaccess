@@ -2,5 +2,5 @@ RewriteEngine on
 RewriteRule ^usuario/?$ api.php
 RewriteRule ^usuario/([0-9]+)?$ api.php?id=$1
 RewriteRule ^produto/?$ api_produto.php
-RewriteRule ^produto/([0-9]+)?$ api_produto.php?id=$1
+RewriteRule ^produto/([0-9]+)?$ api_produto.php?codigo=$1
 

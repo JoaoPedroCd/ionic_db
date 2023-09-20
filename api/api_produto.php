@@ -10,8 +10,8 @@
     if($_SERVER['REQUEST_METHOD'] === 'GET'){
         if(isset($_GET['id'])){
             // so pega o ID
-            $id = $con->real_escape_string($_GET['id']);
-            $sql = $con->query("select * from produto where id = '$id'");
+            $id = $con->real_escape_string($_GET['codigo']);
+            $sql = $con->query("select * from produto where codigo = '$id'");
             $data = $sql->fetch_assoc();
         }else{
             $data = array();
@@ -40,7 +40,7 @@
     if($_SERVER['REQUEST_METHOD'] === 'PUT'){
         if(isset($_GET['id'])){
             // a função real_escape_string remove quaisquer caracteres especiais que possam interferir nas operações de consulta
-            $id = $con->real_escape_string($_GET['id']);
+            $id = $con->real_escape_string($_GET['codigo']);
             $data = json_decode(file_get_contents("php://input"));
             $sql = $con->query("update produto set nome = '".$data->nome."', descricao = '".$data->descricao."', valor = '".$data->valor.",where id = '$id' ");
             if($sql){
@@ -53,9 +53,9 @@
     }
     
     if($_SERVER['REQUEST_METHOD'] === 'DELETE'){
-        if(isset($_GET['id'])){
-            $id = $con->real_escape_string($_GET['id']);
-            $sql = $con->query("delete from produto where id = '$id'");
+        if(isset($_GET['codigo'])){
+            $id = $con->real_escape_string($_GET['codigo']);
+            $sql = $con->query("delete from produto where codigo = '$id'");
         
             if($sql){
                 exit(json_encode(array('status' => 'successo')));
