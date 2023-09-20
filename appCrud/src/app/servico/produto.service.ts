@@ -16,11 +16,7 @@ export interface Produto{
 })
 
 
-
-
 export class ProdutoService {
-
-
 
  //definição da url
  private url = 'http://localhost/api/produto';
@@ -29,6 +25,16 @@ export class ProdutoService {
 
  getAll(){
    return this.http.get<[Produto]>(this.url);
+ }
+ remove(codigo:any){
+  return this.http.delete(this.url+'/'+codigo);
+ }
+ create(produto : Produto){
+  return this.http.post(this.url,produto);
+ }
+ update(produto : Produto , codigo:any){
+  return this.http.put(this.url + '/' + codigo , produto);
+
  }
 
 

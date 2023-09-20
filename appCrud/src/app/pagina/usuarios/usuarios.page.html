@@ -10,13 +10,13 @@
   <ion-list>
     <ion-item-sliding *ngFor="let u of usuarios">
     <ion-item>
-      {{u.id}}-
-      {{u.nivel}}
-      {{u.nome}}
+      <p>{{u.id}}-</p> <p>{{u.nome}} {{u.nivel}}</p>
+      
 
     </ion-item>
     <ion-item-options side="start">
     <ion-item-option color="danger" (click)="remover(u.id)">Delete</ion-item-option>
+    
     <ion-item-option color="success" (click)="atualizar(u)">Atualizar</ion-item-option>
 
   </ion-item-options>

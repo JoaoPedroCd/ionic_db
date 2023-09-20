@@ -7,6 +7,7 @@ import { AddusuarioPage } from '../addusuario/addusuario.page';
   selector: 'app-usuarios',
   templateUrl: './usuarios.page.html',
   styleUrls: ['./usuarios.page.scss'],
+  
 })
 export class UsuariosPage implements OnInit {
 

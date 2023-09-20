@@ -11,6 +11,7 @@ export class AddusuarioPage implements OnInit {
 
   //o input abaixo recebe a interface do usuario
   @Input() u!: Usuario;
+  
 
   atualizar =false;
 
