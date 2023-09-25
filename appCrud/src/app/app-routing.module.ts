@@ -6,30 +6,28 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-
   {
     path: '',
     redirectTo: 'usuarios',
     pathMatch: 'full'
   },
-
   {
     path: 'usuarios',
     loadChildren: () => import('./pagina/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
-  },
-  {
-    path: 'produtos',
-    loadChildren: () => import('./pagina/produtos/produtos.module').then( m => m.ProdutosPageModule)
   },
   {
     path: 'addusuario',
     loadChildren: () => import('./pagina/addusuario/addusuario.module').then( m => m.AddusuarioPageModule)
   },
   {
-    path: 'addproduto',
-    loadChildren: () => import('./pagina/addproduto/addproduto.module').then( m => m.AddprodutoPageModule)
-  },
+    path:'produtos',
+    loadChildren: () => import('./pagina/produtos/produtos.module').then( m => m.ProdutosPageModule)
 
+  },
+  {
+    path:'addproduto',
+    loadChildren: () => import('./pagina/addproduto/addproduto.module').then(m => m.AddprodutoPageModule)
+  },
 ];
 
 @NgModule({

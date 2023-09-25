@@ -9,6 +9,7 @@ export interface Produto{
   nome:string;
   descricao:string;
   valor:string;
+  serie:string;
 }
 
 @Injectable({
@@ -34,6 +35,10 @@ export class ProdutoService {
  }
  update(produto : Produto , codigo:any){
   return this.http.put(this.url + '/' + codigo , produto);
+
+ }
+ getSerie(serie:any){
+  return this.http.get(this.url+'/'+serie);
 
  }
 
