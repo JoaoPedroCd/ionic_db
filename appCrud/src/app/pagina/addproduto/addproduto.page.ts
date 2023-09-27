@@ -4,6 +4,7 @@ import { ModalController, ToastController } from '@ionic/angular';
 import { firstValueFrom } from 'rxjs';
 import { Produto, ProdutoService } from 'src/app/servico/produto.service';
 
+
 @Component({
   selector: 'app-addproduto',
   templateUrl: './addproduto.page.html',
@@ -47,7 +48,7 @@ export class AddprodutoPage implements OnInit {
         }
 
         )
-      }else{
+      }else {
         const serieExist = await firstValueFrom(this.service.getSerie(produto.serie));
 
         if (serieExist){
@@ -56,6 +57,7 @@ export class AddprodutoPage implements OnInit {
         }else{
           this.service.create(produto).subscribe(response =>{
             this.modalCtrl.dismiss(response);
+            
           }
 
           )
