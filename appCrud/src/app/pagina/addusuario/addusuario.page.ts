@@ -62,19 +62,16 @@ export class AddusuarioPage implements OnInit {
       if (emailExist) {
         this.mensagem('Este email já existe.');
       } else if (this.onlyNumbers.test(usuario.cpf)) {
+
         usuario.cpf = this.getCpfFormated(usuario.cpf);
+
         cpfExist = await firstValueFrom(this.service.getCpf(usuario.cpf));
         
-        if (cpfExist) {
+      }else if (cpfExist) {
           this.dados.cpf = '';
           msg = 'este cpf existe';
         }
-      } else  {
-
-        msg = 'somente numeros nesse campo';
-        cpfExist = true;
-      }
-      
+     
       else {
         this.service.create(usuario).subscribe(response => {
           //fecharModal()
