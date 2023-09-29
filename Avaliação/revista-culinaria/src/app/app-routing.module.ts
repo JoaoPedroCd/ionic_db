@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'chef',
     loadChildren: () => import('./page/chef/chef.module').then( m => m.ChefPageModule)
+  },
+  {
+    path: 'addreceita',
+    loadChildren: () => import('./page/addreceita/addreceita.module').then( m => m.AddreceitaPageModule)
   }
 ];
 

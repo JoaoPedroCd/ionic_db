@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Receita, ReceitaService } from 'src/app/service/receita.service';
+import { ModalController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-refeicao',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RefeicaoPage implements OnInit {
 
-  constructor() { }
+  receita: Receita[] = [];
+  constructor(private service: ReceitaService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.service.getCategoria("refeição").subscribe((response) => {
+      this.receita = response
+      console.log(this.receita)
+    }
+
+    )
   }
 
 }
