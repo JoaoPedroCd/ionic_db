@@ -8,7 +8,7 @@ export class AppComponent {
   public appPages = [
  
     { title: 'Todas as receitas', url: 'receitas', icon: 'paper-plane' },
-    { title: 'Cadastrar', url: 'addreceita', icon: 'heart' },
+    { title: 'Cadastrar Admin', url: 'addreceita', icon: 'heart' },
     { title: 'Lanche', url: 'lanche', icon: 'archive' },
     { title: 'Refeiçâo', url: 'refeicao', icon: 'trash' },
     { title: 'Sobremesa', url: 'sobremesa', icon: 'warning' },

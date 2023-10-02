@@ -42,6 +42,8 @@ export class AddprodutoPage implements OnInit {
       !produto.serie
       ){
         this.mensagem('Por favor Preencha todos os canpos');
+     
+     
       }else if (this.atualizar) {
         this.service.update(produto, this.a.codigo).subscribe(response =>{
           this.modalCtrl.dismiss(response);

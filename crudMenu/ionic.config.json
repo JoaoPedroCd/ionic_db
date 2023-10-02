@@ -1,0 +1,7 @@
+{
+  "name": "crudMenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
