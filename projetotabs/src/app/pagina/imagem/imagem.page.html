@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>imagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-item-sliding *ngFor="let i of imagens">
+      <ion-card-title>{{i.nome}}</ion-card-title>
+      <ion-card-subtitle>{{i.data_upload}}</ion-card-subtitle>
+      <ion-item>
+        <img alt="Silhouette of mountains" src="assets/{{i.path}}"/>
+      </ion-item>
+    </ion-item-sliding>
+    </ion-card-header>
+  
+  
+  </ion-card>
+</ion-content>
